@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Login extends Components {
+class Login extends Component {
   render() {
     return (
       <div data-testid="page-login" />

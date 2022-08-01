@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NotFound extends Components {
+class NotFound extends Component {
   render() {
     return (
       <div data-testid="page-not-found" />

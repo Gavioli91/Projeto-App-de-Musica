@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Favorites extends Components {
+class Favorites extends Component {
   render() {
     return (
       <div data-testid="page-favorites" />

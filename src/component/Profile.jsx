@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Profile extends Components {
+class Profile extends Component {
   render() {
     return (
       <div data-testid="page-profile" />

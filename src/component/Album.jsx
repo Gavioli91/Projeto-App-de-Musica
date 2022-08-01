@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Album extends Components {
+class Album extends Component {
   render() {
     return (
       <div data-testid="page-album" />
