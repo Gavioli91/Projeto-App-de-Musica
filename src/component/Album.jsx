@@ -13,6 +13,7 @@ class Album extends React.Component {
 
   componentDidMount() {
     this.getSingle();
+    console.log('qualquer coisa');
   }
 
   getSingle = async () => {
@@ -25,13 +26,16 @@ class Album extends React.Component {
   }
 
   render() {
-    const { music, loading } = this.state;
-    const singleIndex = music.filter((single) => single.kind === 'single');
+    const {
+      music, loading } = this.state;
+    console.log(music);
+    const singleIndex = music.filter((single) => single.kind === 'song');
+    console.log(singleIndex);
     return (
-      <div data-testid="page-album">
+      <div>
         <Header />
         { loading ? (<Loading />) : (
-          <div>
+          <div data-testid="page-album">
             <div>
               <img
                 src={ music[0].artworkUrl100 }

@@ -4,7 +4,10 @@ import Loading from './Loading';
 import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
-    state= { favoriteMusic: [], loading: false }
+    state= {
+      favoriteMusic: [],
+      loading: false,
+    }
 
     async componentDidMount() {
       this.setState({

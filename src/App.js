@@ -21,9 +21,9 @@ class App extends React.Component {
             <Route exact path="/favorites" component={ Favorites } />
             <Route exact path="/profile" component={ Profile } />
             <Route exact path="/profile/edit" component={ ProfileEdit } />
-            <Route component={ NotFound } />
             <Route exact path="loading" component={ Loading } />
             <Route exact path="/album/:id" render={ (props) => <Album { ...props } /> } />
+            <Route component={ NotFound } />
           </Switch>
         </BrowserRouter>
       </main>
