@@ -8,7 +8,7 @@ class Search extends React.Component {
   state = { btnDisabled: true,
     searchArtist: '',
     music: [],
-    band: '',
+    artist: '',
     loading: false,
   };
 
@@ -17,24 +17,24 @@ class Search extends React.Component {
     this.setState({
       [name]: value,
     }, () => {
-      const { band } = this.state;
-      if (band.length >= 2) {
+      const { artist } = this.state;
+      if (artist.length > 1) {
         this.setState({ btnDisabled: false });
       }
     });
   };
 
   searchMusic = () => {
-    const { band } = this.state;
-    this.setState({ loading: true, searchArtist: band },
+    const { artist } = this.state;
+    this.setState({ loading: true, searchArtist: artist },
       async () => {
-        const music = await searchAlbumsAPI(band);
-        this.setState({ music, band: '', loading: false });
+        const music = await searchAlbumsAPI(artist);
+        this.setState({ music, artist: '', loading: false });
       });
   }
 
   render() {
-    const { btnDisabled, searchArtist, music, band, loading } = this.state;
+    const { btnDisabled, searchArtist, music, artist, loading } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
@@ -43,8 +43,8 @@ class Search extends React.Component {
             <input
               type="text"
               data-testid="search-artist-input"
-              name="band"
-              value={ band }
+              name="artist"
+              value={ artist }
               onChange={ this.btnInput }
             />
             <button
